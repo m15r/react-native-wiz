@@ -1,4 +1,6 @@
 {
   "name": "react-native-wiz",
-  "version": "1.0.01"
+  "version": "1.0.2",
+  "description": "A beautiful Wizard for React Native",
+  "license": "MIT"
 }
