@@ -5,7 +5,7 @@ Installation
 ---
  
 * npm: `npm install react-native-wiz`
-* yarn: `yarn install react-native-wiz`
+* yarn: `yarn add react-native-wiz`
  
  Documentation
  ---
