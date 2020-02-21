@@ -98,7 +98,7 @@ You can easily add multiple wizards.
 ```jsx
 ...
 <Wiz.Item
-  wiz="profileWizard"
+  wiz="myWizardA"
   id="myAwesomeButton">
   ...
 </Wiz.Item>
@@ -109,18 +109,28 @@ You can easily add multiple wizards.
 
 ```jsx
 ...
-<Wiz.Item
-  wiz="profileWizard"
-  id="myAwesomeButton"
-  queue={1}>
-  ...
-</Wiz.Item>
-<Wiz.Item
-  wiz="profileWizard"
-  id="myAwesomeMenu"
-  queue={2}>
-  ...
-</Wiz.Item>
+<ComponentA>
+ <Wiz.Item
+   wiz="myWizardA"
+   id="myAwesomeButton"
+   queue={1}>
+   ...
+ </Wiz.Item>
+ <Wiz.Item
+   wiz="myWizardA"
+   id="myAwesomeMenu"
+   queue={2}>
+   ...
+ </Wiz.Item>
+</ComponentA>
+<ComponentB>
+ <Wiz.Item
+   wiz="myWizardB"
+   id="myAwesomeMenu"
+   queue={3}>
+   ...
+ </Wiz.Item>
+</ComponentB>
 ...
 ```
 
