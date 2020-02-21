@@ -19,7 +19,8 @@ import Wiz from 'react-native-wiz'
 Usage
 ---
 
-1. Wrap your wizard(s) or whole application inside the Wiz provider e.g. inside App.js
+#### 1. Creating the Provider
+Wrap your wizard(s) or whole application inside the Wiz provider e.g. inside App.js
 ```jsx
 <Wiz.Provider>
   <View style={{ flex: 1 }}>
@@ -28,7 +29,8 @@ Usage
 </Wiz.Provider>
 ```
 
-2. Start wrapping each of the elements you want to be highlighted inside a `<Wiz.Item>`. Make sure to provide a unique ID for each new item.
+#### 2. Adding your items
+Start wrapping each of the elements you want to be highlighted inside a `<Wiz.Item>`. Make sure to provide a unique ID for each component.
 ```jsx
 <Wiz.Item
   wiz="default"
@@ -41,6 +43,9 @@ Usage
   </TouchableOpacity>
 </Wiz.Item>
 ```
+
+#### 3. Handling completion
+You'll probably want your usual component action to complete the the wizard step. By default, actions are passed through along with the Wiz comonent. All you have to do is set the `completed` prop to true on `Wiz.Item` , or use the `complete()` method, in order to move on to the next step.
 
 Props
 ---
