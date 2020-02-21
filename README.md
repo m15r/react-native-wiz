@@ -67,9 +67,9 @@ onSomething() {
 }
 
 return (
-  <Wiz.Item
-    ref={ref => myWizardItem = ref}
+  <Wiz.Item  
     id="example"
+    ref={ref => myWizardItem = ref}>
     ...
   </Wiz.Item>
 )
