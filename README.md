@@ -1,7 +1,7 @@
 # React Native Wiz
 A beautiful Wizard for React Native
 
-**This package is in early development and experimental. Use at your own risk**
+**React Native Wiz is in early development stage and has been tested exclusively on iOS. Use at your own risk.**
  
 Installation
 --- 
