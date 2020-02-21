@@ -73,7 +73,7 @@ let myWizardComponent = null
 
 export default function MyComponent() {
 
-  onSomething() {
+  onDoSomething() {
     if (myWizardItem !== null) {
       myWizardComponent.show()
     }
@@ -83,7 +83,7 @@ export default function MyComponent() {
     <Wiz.Item  
       id="example"
       ref={ref => myWizardComponent = ref}>
-      <TouchableOpacity onPress={doSomething}>
+      <TouchableOpacity onPress={onDoSomething}>
         <Text>My Button</Text>
       </TouchableOpacity>
     </Wiz.Item>
