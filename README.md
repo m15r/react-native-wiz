@@ -69,17 +69,27 @@ Methods
 Methods can be accesed through the component ref.
 
 ```jsx
-onSomething() {
-  myWizardItem.show()
-}
+let myWizardComponent = null
 
-return (
-  <Wiz.Item  
-    id="example"
-    ref={ref => myWizardItem = ref}>
-    ...
-  </Wiz.Item>
-)
+export default function MyComponent() {
+
+  onSomething() {
+    if (myWizardItem !== null) {
+      myWizardComponent.show()
+    }
+  }
+
+  return (
+    <Wiz.Item  
+      id="example"
+      ref={ref => myWizardComponent = ref}>
+      <TouchableOpacity onPress={doSomething}>
+        <Text>My Button</Text>
+      </TouchableOpacity>
+    </Wiz.Item>
+  )
+
+}
 ```
 
 ### show()
