@@ -74,7 +74,7 @@ let myWizardComponent = null
 export default function MyComponent() {
 
   const doSomething = () => {
-    if (myWizardItem !== null) {
+    if (myWizardComponent !== null) {
       myWizardComponent.show()
     }
   }
