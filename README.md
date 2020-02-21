@@ -8,6 +8,8 @@ Installation
 * npm: `npm install react-native-wiz`
 * yarn: `yarn add react-native-wiz`
 
+Add to the top of each component accessing the Wiz library.
+
 ```jsx
 import Wiz from 'react-native-wiz'
 ```
