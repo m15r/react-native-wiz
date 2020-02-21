@@ -34,7 +34,7 @@ Usage
 </Wiz.Item>
 ```
 
-3. Add Wiz controls anywhere in your application.
+3. Add Wiz controls anywhere in your application, inside the `<Wiz.Provider`.
 ```jsx
 <Wiz.Controls
  id="exampleWizard"
