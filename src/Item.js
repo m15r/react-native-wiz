@@ -10,9 +10,7 @@ class Item extends Component {
   constructor(props) {
 
     super(props)
-
     this.state = { opacity: 1 }
-
     this.item = null // Ref
     this.prevousItemId = null
     this.enabled = props.enabled
@@ -21,9 +19,11 @@ class Item extends Component {
   }
 
   componentDidMount() {
-    const { wiz, id, queue, autoPlay } = this.props
-    this.context.register({ wiz, id, queue, autoPlay })
-    if (autoPlay) this.context.play(wiz)
+    if (this.enabled) {
+      const { wiz, id, queue, autoPlay } = this.props
+      this.context.register({ wiz, id, queue, autoPlay })
+      if (autoPlay) this.context.play(wiz)
+    }
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -39,8 +39,14 @@ class Item extends Component {
       this.enabled = this.props.enabled
     }
 
-    if (prevProps.completed !== this.props.completed) {
-      if (this.props.completed) this.complete()
+    if (
+      prevProps.completed !== this.props.completed ||
+      prevProps.complete !== this.props.complete
+    ) {
+      if (
+        this.props.completed ||
+        this.props.complete
+      ) this.complete()
     }
 
   }
@@ -51,6 +57,8 @@ class Item extends Component {
       this.delayTimeout = setTimeout(this.onSelect, this.props.delay)
     } else this.onSelect()
   }
+
+  show = this.play
 
   measureAndSetItem = () => {
     if (this.enabled && this.item) {
@@ -97,6 +105,7 @@ Item.propTypes = {
   autoPlay: PropTypes.bool,
   queue: PropTypes.number,
   completed: PropTypes.bool,
+  complete: PropTypes.bool,
   image: PropTypes.string,
   imageOffset: PropTypes.object,
   imageSize: PropTypes.number,
@@ -111,6 +120,7 @@ Item.defaultProps = {
   autoPlay: false,
   queue: 0,
   completed: false,
+  complete: false,
   image: null,
   imageOffset: { x: 0, y: 0 },
   imageSize: 100,
