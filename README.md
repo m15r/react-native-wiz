@@ -59,6 +59,22 @@ Props
 Methods
 ---
 
+Methods can be accesed through the component ref.
+
+```jsx
+onSomething() {
+ myWizardItem.show()
+}
+
+return (
+ <Wiz.Item
+   ref={ref => myWizardItem = ref}
+   id="example"
+   ...
+ </Wiz.Item>
+)
+```
+
 ### show()
 Shows the item.
 
