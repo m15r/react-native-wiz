@@ -63,15 +63,15 @@ Methods can be accesed through the component ref.
 
 ```jsx
 onSomething() {
- myWizardItem.show()
+  myWizardItem.show()
 }
 
 return (
- <Wiz.Item
-   ref={ref => myWizardItem = ref}
-   id="example"
-   ...
- </Wiz.Item>
+  <Wiz.Item
+    ref={ref => myWizardItem = ref}
+    id="example"
+    ...
+  </Wiz.Item>
 )
 ```
 
@@ -90,9 +90,9 @@ You can easily add multiple wizards.
 
 ```jsx
 <Wiz.Item
- wiz="profileWizard"
- id="myAwesomeButton">
- ...
+  wiz="profileWizard"
+  id="myAwesomeButton">
+  ...
 </Wiz.Item>
 ```
 
@@ -100,16 +100,16 @@ You can easily add multiple wizards.
 
 ```jsx
 <Wiz.Item
- wiz="profileWizard"
- id="myAwesomeButton"
- queue={1}>
- ...
+  wiz="profileWizard"
+  id="myAwesomeButton"
+  queue={1}>
+  ...
 </Wiz.Item>
 <Wiz.Item
- wiz="profileWizard"
- id="myAwesomeMenu"
- queue={2}>
- ...
+  wiz="profileWizard"
+  id="myAwesomeMenu"
+  queue={2}>
+  ...
 </Wiz.Item>
 ```
 
