@@ -1,5 +1,5 @@
 # React Native Wiz
-A beautiful Wizard for React Native
+A beautiful Wizard for React Native, because every app needs a proper introduction.
 
 ![React Native Wiz Preview](example/wiz.gif)
 
@@ -53,7 +53,7 @@ Props
 | autoPlay      | Boolean determining whether or not the wizards hould start by itself. Use with care and only on the first item in a wizard. Defaults to `false` | 
 | queue         | Position in queue. Use this to configure the playing order. Defaults to `0` |
 | completed     | After setting this prop to true the next item will appear |
-| image         | Description image URI (optional) |
+| image         | Description image source (optional) |
 | imageOffset   | Image offset from item pos (object) `{ x: int, y: int }` |
 | delay         | Time in ms after which in item should show. Defaults to `0` |
 | onActive      | Function. Runs when the item becomes active |
