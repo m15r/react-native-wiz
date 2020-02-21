@@ -1,7 +1,7 @@
 # React Native Wiz
 A beautiful Wizard for React Native
 
-__This is work in progress can can not yet be considered stable. Use at your own risk.__
+__This package is in early development and experimental. Use at your own risk.__
  
 Installation
 --- 
