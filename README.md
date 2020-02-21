@@ -40,7 +40,7 @@ Usage
 </Wiz.Item>
 ```
 
-Item Props
+Props
 ---
 
 | Prop          | Description   |
@@ -56,7 +56,7 @@ Item Props
 | delay         | Time in ms after which in item should show. Defaults to `0` |
 | onActive      | Function. Runs when the item becomes active |
 
-Item Methods
+Methods
 ---
 
 ### play()
