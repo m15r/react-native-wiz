@@ -59,7 +59,7 @@ Props
 Methods
 ---
 
-### play()
+### show()
 Shows the item.
 
 ### complete()
