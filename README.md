@@ -1,7 +1,7 @@
 # React Native Wiz
 A beautiful Wizard for React Native
 
-__This package is in early development and experimental. Use at your own risk.__
+__This package is in early development and experimental. Use at your own risk.
  
 Installation
 --- 
@@ -20,32 +20,32 @@ Usage
 1. Wrap your wizard(s) or whole application inside the Wiz provider e.g. inside App.js
 ```jsx
 <Wiz.Provider>
- <View style={{ flex: 1 }}>
-  <Text>My Amazing App</Text>
- </View>
+  <View style={{ flex: 1 }}>
+    <Text>My Amazing App</Text>
+  </View>
 </Wiz.Provider>
 ```
 
 2. Start wrapping each of the elements you want to be highlighted inside a `<Wiz.Item>`. Make sure to provide a unique ID for each new item.
 ```jsx
 <Wiz.Item
- id="exampleItem">
- <TouchableOpacity>
-  <Text>My Button</Text>
- </TouchableOpacity>
+  id="exampleItem">
+  <TouchableOpacity>
+    <Text>My Button</Text>
+  </TouchableOpacity>
 </Wiz.Item>
 ```
 
 3. Add Wiz controls anywhere in your application, inside your `<Wiz.Provider>`.
 ```jsx
 <Wiz.Controls
- id="exampleWizard"
- items={[ 'exampleItem' ]}
- autoPlay={true}
- onComplete={/* function to run upon wizard completion */} />
+  id="exampleWizard"
+  items={[ 'exampleItem' ]}
+  autoPlay={true}
+  onComplete={/* function to run upon wizard completion */} />
 ```
 
-Controls Props
+Control Props
 ---
 
 | Prop          | Description |
@@ -54,6 +54,14 @@ Controls Props
 | items         | Array containing item ids. Adding these will create the wizard |
 | autoPlay      | Start playing directly after creation (boolean). Default value is `false` |
 | onComplete    | Function, runs when last item is complete. Use this to implement your own logic, such as storing a parameter preventing the wizard from playing the next time the app starts. |
+
+Control Methods
+---
+
+| Method        | Description |
+| ------------- | ----------- |
+| play(`<wizard.id>`)        | ...         |
+| next()        | ...         |
 
 Item Props
 ---
