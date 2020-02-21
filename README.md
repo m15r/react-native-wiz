@@ -29,45 +29,38 @@ Usage
 2. Start wrapping each of the elements you want to be highlighted inside a `<Wiz.Item>`. Make sure to provide a unique ID for each new item.
 ```jsx
 <Wiz.Item
-  id="exampleItem">
+  wiz="default"
+  id="example"
+  enabled={true}
+  autoPlay={true}
+  completed={false}>
   <TouchableOpacity>
     <Text>My Button</Text>
   </TouchableOpacity>
 </Wiz.Item>
 ```
 
-3. Add Wiz controls anywhere in your application, inside your `<Wiz.Provider>`.
-```jsx
-<Wiz.Controls
-  id="exampleWizard"
-  items={[ 'exampleItem' ]}
-  autoPlay={true}
-  onComplete={/* function to run upon wizard completion */} />
-```
-
-Control Props
----
-
-| Prop          | Description |
-| ------------- | ------------- |
-| id            | A unique ID required for each new wizard |
-| items         | Array containing item ids. Adding these will create the wizard |
-| autoPlay      | Start playing directly after creation (boolean). Default value is `false` |
-| onComplete    | Function, runs when last item is complete. Use this to implement your own logic, such as storing a parameter preventing the wizard from playing the next time the app starts. |
-
-Control Methods
----
-
-| Method        | Description |
-| ------------- | ----------- |
-| play(`<wizard.id>`)        | ...         |
-| next()        | ...         |
-
-Item Props
+Props
 ---
 
 | Prop          | Description   |
 | ------------- | ------------- |
-| id            | A unique ID required for each item |
-| image         | Description image URI |
+| wiz           | The ID of the wizard this item belongs to (optional). Use this when you need multiple wizards |
+| id            | A unique ID, required for each item |
+| enabled       | Enable or disable the item. Defaults to `true` |
+| autoPlay      | Boolean determining whether or not the wizards hould start by itself. Use with care and only on the first item in a wizard. Defaults to `false` | 
+| queue         | Position in queue. Use this to configure the playing order. Defaults to `0` |
+| completed     | After setting this prop to true the next item will appear |
+| image         | Description image URI (optional) |
 | imageOffset   | Image offset from item pos (object) `{ x: int, y: int }` |
+| delay         | Time in ms after which in item should show. Defaults to `0` |
+| onActive      | Function. Runs when the item becomes active |
+
+Methods
+---
+
+### play()
+Shows the item.
+
+### complete()
+Same funcionality as the `completed` prop. Running this method will mark the item as complete and show the first next item in queue. If there are no items left in the queue, the `onWizComplete` prop will run on each Item component.
