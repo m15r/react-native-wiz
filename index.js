@@ -1,12 +1,10 @@
 import React, { Component } from 'react'
-import Item from './Item'
-import { WizardProvider } from './ContextAPI'
-import Controls from './Controls'
+import Provider from './src/Provider'
+import Item from './src/Item'
 
 export default class Wiz extends Component {
 
-  static Provider = WizardProvider
+  static Provider = Provider
   static Item = Item
-  static Controls = Controls
 
 }

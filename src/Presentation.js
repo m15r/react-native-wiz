@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import {
   Animated,
   Dimensions,
@@ -11,7 +11,7 @@ import {
 const width = Dimensions.get('window').width
 const height = Dimensions.get('window').height
 
-export default class Presentation extends React.Component {
+export default class Presentation extends Component {
 
   constructor(props) {
 

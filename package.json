@@ -2,5 +2,10 @@
   "name": "react-native-wiz",
   "version": "1.0.2",
   "description": "A beautiful Wizard for React Native",
-  "license": "MIT"
+  "license": "MIT",
+  "homepage": "https://github.com/milonk/react-native-wiz",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/milonk/react-native-wiz.git"
+  }
 }
