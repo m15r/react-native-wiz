@@ -64,3 +64,37 @@ Shows the item.
 
 ### complete()
 Same funcionality as the `completed` prop. Running this method will mark the item as complete and show the first next item in queue. If there are no items left in the queue, the `onWizComplete` prop will run on each Item component.
+
+Using multiple wizards
+---
+
+You can easily add multiple wizards.
+
+1. Add a `wiz` prop to each item to attach it to the appropriate wizard like so:
+
+```jsx
+<Wiz.Item
+ wiz="profileWizard"
+ id="myAwesomeButton">
+ ...
+</Wiz.Item>
+```
+
+2. Next, determine the order/position in queue for each item with the `queue` prop.
+
+```jsx
+<Wiz.Item
+ wiz="profileWizard"
+ id="myAwesomeButton"
+ queue={1}>
+ ...
+</Wiz.Item>
+<Wiz.Item
+ wiz="profileWizard"
+ id="myAwesomeMenu"
+ queue={2}>
+ ...
+</Wiz.Item>
+```
+
+This way, `myAwesomeMenu` will not appear until `myAwesomeButton` is completed.
