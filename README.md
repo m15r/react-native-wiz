@@ -75,6 +75,7 @@ export default function MyComponent() {
 
   const doSomething = () => {
     if (myWizardComponent !== null) {
+      // Showing the Item component
       myWizardComponent.show()
     }
   }
