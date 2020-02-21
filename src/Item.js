@@ -31,10 +31,7 @@ class Item extends Component {
     if (this.prevousItemId !== this.context.activeItemId) {
       this.prevousItemId = this.context.activeItemId
       if (this.props.id === this.context.activeItemId) {
-        if (this.props.delay) {
-          clearTimeout(this.delayTimeout)
-          this.delayTimeout = setTimeout(this.onSelect, this.props.delay)
-        } else this.onSelect()
+        this.play()
       }
     }
 
@@ -48,19 +45,14 @@ class Item extends Component {
 
   }
 
-  complete = () => {
-    this.context.next()
+  play = () => {
+    if (this.props.delay) {
+      clearTimeout(this.delayTimeout)
+      this.delayTimeout = setTimeout(this.onSelect, this.props.delay)
+    } else this.onSelect()
   }
 
-  next = () => {
-
-  }
-
-  previous = () => {
-
-  }
-
-  onSelect = () => {
+  measureAndSetItem = () => {
     if (this.enabled && this.item) {
       this.item.measure((x, y, width, height, pageX, pageY) => {
         this.context.setItemComponent({
@@ -77,6 +69,10 @@ class Item extends Component {
       })
     }
     this.props.onActive()
+  }
+
+  complete = () => {
+    this.context.next()
   }
 
   render() {
@@ -112,7 +108,7 @@ Item.propTypes = {
 Item.defaultProps = {
   wiz: 'default',
   enabled: true,
-  autoPlay: true,
+  autoPlay: false,
   queue: 0,
   completed: false,
   image: null,
