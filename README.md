@@ -105,7 +105,7 @@ You can easily add multiple wizards.
 ...
 ```
 
-2. Next, determine the order/position in queue for each item with the `queue` prop.
+2. Next, determine the order/position in queue for each item using the `queue` prop in ascending order. Using the same queue position twice will result in unexpected behavior.
 
 ```jsx
 ...
