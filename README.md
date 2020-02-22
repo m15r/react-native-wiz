@@ -89,7 +89,8 @@ imageOffset   | Offset from component position (object) `{ x: int, y: int }`
 customComponent | Custom component to render
 customComponentOffset | Offset from component position (object) `{ x: int, y: int }`
 delay         | Time in ms after which the action should appear. Defaults to `0`
-onActive      | Function. Runs when the item becomes active
+onActive      | Function. Runs when the action becomes active
+onComplete    | Function. Runs when the action is completed
 style         | Inherited from `View` (object)
 
 Methods
@@ -99,4 +100,4 @@ Methods
 Shows the `Wiz.View`.
 
 ### complete()
-Same funcionality as the `completed` prop. Running this method will mark the action as complete and show the next action in queue. If there are no actions left, the `onWizComplete` prop will run on each `Wiz.View` component.
+Same funcionality as the `completed` prop. Running this method will mark the action as complete and show the next action in queue.
