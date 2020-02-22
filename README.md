@@ -55,7 +55,7 @@ Props
 | wiz           | The ID of the wizard this item belongs to (optional). Use this when you need multiple wizards |
 | id            | A unique ID, required for each item |
 | enabled       | Enable or disable the item. Defaults to `true` |
-| autoPlay      | Boolean determining whether or not the wizards hould start by itself. Use with care and only on the first item in a wizard. Defaults to `false` | 
+| autoPlay      | Boolean determining whether or not the wizards should start by itself. Use with care and only on the first item in a wizard. Defaults to `false` | 
 | queue         | Position in queue. Use this to configure the playing order. Defaults to `0` |
 | completed     | After setting this prop to true the next item will appear |
 | text          | Text describing your action |
