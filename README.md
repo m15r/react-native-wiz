@@ -99,4 +99,4 @@ Methods
 Shows the `Wiz.View`.
 
 ### complete()
-Same funcionality as the `completed` prop. Running this method will mark the action as complete and show the first next action in queue. If there are no actions left, the `onWizComplete` prop will run on each `Wiz.View` component.
+Same funcionality as the `completed` prop. Running this method will mark the action as complete and show the next action in queue. If there are no actions left, the `onWizComplete` prop will run on each `Wiz.View` component.
