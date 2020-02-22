@@ -73,7 +73,7 @@ Props
 
 Prop          | Description   |
 ------------- | ------------- |
-wiz           | The ID of the wizard this action belongs to (optional). Use this when you need multiple wizards
+wiz           | ID of the wizard this action belongs to (optional). Use when you need multiple wizards
 id            | A unique ID, required for each action
 enabled       | Enable or disable the action. Defaults to `true`
 autoPlay      | Boolean determining whether or not the wizards should start by itself. Use with care and only on the first action in a wizard. Defaults to `false`
