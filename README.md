@@ -70,21 +70,21 @@ Methods
 Methods can be accesed through the component ref.
 
 ```jsx
-let myWizardComponent = null
+let myWizView = null
 
 export default function MyComponent() {
 
   const doSomething = () => {
-    if (myWizardComponent !== null) {
+    if (myWizView !== null) {
       // Showing the Item component
-      myWizardComponent.show()
+      myWizView.complete()
     }
   }
 
   return (
     <Wiz.View  
       id="example"
-      ref={ref => myWizardComponent = ref}>
+      ref={ref => myWizView = ref}>
       <TouchableOpacity onPress={doSomething}>
         <Text>My Button</Text>
       </TouchableOpacity>
