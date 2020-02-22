@@ -45,7 +45,7 @@ Start wrapping each of the elements you want to be part of the wizard inside a `
 ```
 
 #### 3. Handling completion
-You'll probably want your usual component action to complete the the wizard step. By default, actions are passed through along with the `Wiz.View`. All you have to do is set the `completed` prop to `true`, or use the `complete()` method, in order to move on to the next step.
+You'll probably want your usual component action to complete the the wizard step. By default, actions are passed through along with the `Wiz.View`. All you have to do is set the `completed` prop to `true`, or use the `complete()` method in order to move on to the next step.
 
 Props
 ---
