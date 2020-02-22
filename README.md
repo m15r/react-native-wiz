@@ -33,7 +33,6 @@ Wrap your wizard(s) or whole application inside the Wiz provider e.g. inside App
 Start wrapping each of the elements you want to be part of the wizard inside a `Wiz.View`. Make sure to provide a unique ID for each view.
 ```jsx
 <Wiz.View
-  wiz="default"
   id="example"
   enabled={true}
   autoPlay={true}
