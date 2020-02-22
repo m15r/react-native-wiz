@@ -29,7 +29,7 @@ Wrap your wizard(s) or whole application inside the Wiz provider e.g. inside App
 </Wiz.Provider>
 ```
 
-#### 2. Adding your items
+#### 2. Adding your actions
 Start wrapping each of the elements you want to be part of the wizard inside a `Wiz.View`. Make sure to provide a unique ID for each view.
 ```jsx
 <Wiz.View
