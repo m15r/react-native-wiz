@@ -43,7 +43,29 @@ Start wrapping each of the elements you want to be part of the wizard inside a `
 ```
 
 ### 3. Handling completion
-You'll probably want your usual component action to mark the wizard action as completed. By default, actions are passed through along with the `Wiz.View`. This means all you have to do is change the `completed` prop to `true`, or use the `complete()` method.
+You'll probably want your usual component action to mark the wizard action as completed. By default, actions are passed through along with the children of `Wiz.View`. This means all you have to do is change the `completed` prop to `true`, or use the `complete()` method.
+
+```jsx
+export default function MyComponent() {
+
+  const [ completed, setCompleted ] = useState(false)
+
+  const onPress = () => {
+    setCompleted(true)
+  }
+
+  return (
+    <Wiz.View  
+      id="example"
+      completed={completed}>
+      <TouchableOpacity onPress={onPress}>
+        <Text>My Button</Text>
+      </TouchableOpacity>
+    </Wiz.View>
+  )
+
+}
+```
 
 Props
 ---
