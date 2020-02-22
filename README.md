@@ -34,7 +34,6 @@ Start wrapping each of the elements you want to be part of the wizard inside a `
 ```jsx
 <Wiz.View
   id="example"
-  enabled={true}
   autoPlay={true}
   completed={false}>
   <TouchableOpacity>
