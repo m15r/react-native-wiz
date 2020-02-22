@@ -48,7 +48,7 @@ You'll probably want your usual component action to mark the wizard action as co
 ```jsx
 export default function MyComponent() {
 
-  const [ completed, setCompleted ] = useState(false)
+  const [ completed, setCompleted ] = React.useState(false)
 
   const onPress = () => {
     setCompleted(true)
