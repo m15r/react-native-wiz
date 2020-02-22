@@ -1,15 +1,13 @@
 import React, { Component } from 'react'
 import {
   Animated,
-  Dimensions,
   Easing,
-  Image,
   Modal,
-  TouchableWithoutFeedback,
   View
 } from 'react-native'
-const width = Dimensions.get('window').width
-const height = Dimensions.get('window').height
+import TextComponent from './components/TextComponent'
+import ImageComponent from './components/ImageComponent'
+import CustomComponent from './components/CustomComponent'
 
 export default class Presentation extends Component {
 
@@ -23,7 +21,7 @@ export default class Presentation extends Component {
     }
 
     this.bgAnimation = new Animated.Value(0)
-    this.imageAnimation = new Animated.Value(0)
+    this.showAnimation = new Animated.Value(0)
 
   }
 
@@ -38,7 +36,7 @@ export default class Presentation extends Component {
 
   setActive = (item) => {
     this.bgAnimation.setValue(0)
-    this.imageAnimation.setValue(0)
+    this.showAnimation.setValue(0)
     this.setState({
       item: item,
       visible: true
@@ -47,7 +45,7 @@ export default class Presentation extends Component {
         toValue: 1,
         duration: 150
       }).start()
-      Animated.timing(this.imageAnimation, {
+      Animated.timing(this.showAnimation, {
         toValue: 1,
         delay: 300,
         duration: 500,
@@ -62,7 +60,6 @@ export default class Presentation extends Component {
       visible
     } = this.state
     if (item !== null) {
-      const height = item.id ? item.size/(item.image.size.width/item.image.size.height) : 0
       return (
         <Modal visible={visible} transparent>
           <Animated.View style={{
@@ -75,34 +72,36 @@ export default class Presentation extends Component {
           >
             { (item.id) && (
               <>
-                <Animated.View style={{
-                  height: height,
-                  left: item.pos.x+item.image.offset.x,
-                  opacity: this.imageAnimation,
-                  position: 'absolute',
-                  transform: [{
-                    scale: this.imageAnimation.interpolate({
-                      inputRange: [ 0, 1 ],
-                      outputRange: [ 0.9, 1 ]
-                    })
-                  }],
-                  top: item.pos.y+item.image.offset.y,
-                  width: item.size
-                }}>
-                  <Image
-                    source={item.image.uri}
-                    style={{
-                      height: height,
-                      width: item.size
-                    }}
-                  />
-                </Animated.View>
+                { item.text !== null && (
+                  <TextComponent
+                    animation={this.showAnimation}
+                    pos={item.pos}
+                    offset={item.textOffset}
+                    text={item.text}
+                    style={item.textStyle} />
+                )}
+                { item.image !== null && (
+                  <ImageComponent
+                    animation={this.showAnimation}
+                    pos={item.pos}
+                    offset={item.imageOffset}
+                    image={item.image}
+                    height={item.imageHeight}
+                    width={item.imageWidth} />
+                )}
+                { item.customComponent !== null && (
+                  <CustomComponent
+                    animation={this.showAnimation}
+                    pos={item.pos}
+                    offset={item.customComponentOffset}
+                    component={item.customComponent} />
+                )}
                 <View style={{
                   left: item.pos.x,
                   top: item.pos.y,
                   position: 'absolute'
                 }}>
-                  {item.component}
+                  {item.children}
                 </View>
               </>
             )}

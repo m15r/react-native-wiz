@@ -3,7 +3,7 @@ import { View } from 'react-native'
 import PropTypes from 'prop-types'
 import { WizContext } from './ContextAPI'
 
-class Item extends Component {
+class WizView extends Component {
 
   static contextType = WizContext
 
@@ -22,7 +22,7 @@ class Item extends Component {
     if (this.enabled) {
       const { wiz, id, queue, autoPlay } = this.props
       this.context.register({ wiz, id, queue, autoPlay })
-      if (autoPlay) this.context.play(wiz)
+      if (autoPlay) this.context.show(wiz)
     }
   }
 
@@ -31,7 +31,7 @@ class Item extends Component {
     if (this.prevousItemId !== this.context.activeItemId) {
       this.prevousItemId = this.context.activeItemId
       if (this.props.id === this.context.activeItemId) {
-        this.play()
+        this.show()
       }
     }
 
@@ -51,28 +51,25 @@ class Item extends Component {
 
   }
 
-  play = () => {
+  show = () => {
     if (this.props.delay) {
       clearTimeout(this.delayTimeout)
-      this.delayTimeout = setTimeout(this.onSelect, this.props.delay)
-    } else this.onSelect()
+      this.delayTimeout = setTimeout(this.measureAndSetItem, this.props.delay)
+    } else this.measureAndSetItem
   }
-
-  show = this.play
 
   measureAndSetItem = () => {
     if (this.enabled && this.item) {
       this.item.measure((x, y, width, height, pageX, pageY) => {
+        const {
+          children, text, textOffset, textStyle, image, imageOffset, imageHeight,
+          imageWidth, customComponent, customComponentOffset
+        } = this.props
         this.context.setItemComponent({
           id: this.props.id,
           pos: { x: pageX, y: pageY },
-          component: this.props.children,
-          image: {
-            offset: this.props.imageOffset ? this.props.imageOffset : { x: 0, y: 0 },
-            uri: this.props.image,
-            size: { width: 1024, height: 384 }
-          },
-          size: this.props.size
+          children, text, textOffset, textStyle, image, imageOffset, imageHeight,
+          imageWidth, customComponent, customComponentOffset
         })
       })
     }
@@ -90,7 +87,7 @@ class Item extends Component {
     return (
       <View
         ref={ref => this.item = ref}
-        style={{ opacity }}>
+        style={[ this.props.style, { opacity } ]}>
           {this.props.children}
       </View>
     )
@@ -98,7 +95,7 @@ class Item extends Component {
 
 }
 
-Item.propTypes = {
+WizView.propTypes = {
   wiz: PropTypes.string,
   id: PropTypes.string.isRequired,
   enabled: PropTypes.bool,
@@ -106,27 +103,40 @@ Item.propTypes = {
   queue: PropTypes.number,
   completed: PropTypes.bool,
   complete: PropTypes.bool,
+  text: PropTypes.string,
+  textStyle: PropTypes.object,
   image: PropTypes.string,
   imageOffset: PropTypes.object,
-  imageSize: PropTypes.number,
+  imageHeight: PropTypes.number,
+  imageWidth: PropTypes.number,
+  customComponent: PropTypes.node,
+  customComponentOffset: PropTypes.object,
   delay: PropTypes.number,
   onActive: PropTypes.func,
-  onWizComplete: PropTypes.func
+  onWizComplete: PropTypes.func,
+  // Inherited props
+  style: PropTypes.object
 }
 
-Item.defaultProps = {
+WizView.defaultProps = {
   wiz: 'default',
   enabled: true,
   autoPlay: false,
   queue: 0,
   completed: false,
   complete: false,
+  text: null,
+  textOffset: { x: 0, y: -60 },
+  textStyle: {},
   image: null,
-  imageOffset: { x: 0, y: 0 },
-  imageSize: 100,
+  imageOffset: { x: 0, y: -60 },
+  imageHeight: 100,
+  imageWidth: 100,
+  customComponent: null,
+  customComponentOffset: { x: 0, y: -60 },
   delay: 0,
   onActive: () => {},
   onWizComplete: () => {}
 }
 
-export default Item
+export default WizView

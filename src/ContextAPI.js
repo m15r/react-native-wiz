@@ -27,12 +27,11 @@ class Provider extends Component {
         if (queue !== 0) {
           this.registered[wiz].sort((a, b) => a.queue - b.queue)
         }
-        console.warn(this.registered)
       } else {
         console.warn(`Wiz: duplicate item "${id}"`)
       }
     },
-    play: (wiz, id = null) => {
+    show: (wiz, id = null) => {
       if (this.registered[wiz] && this.activeWiz === null) {
         // Make sure Wiz isn't already in progress
         if (id === null) {
