@@ -45,7 +45,7 @@ Start wrapping each of the elements you want to be part of the wizard inside a `
 ```
 
 #### 3. Handling completion
-You'll probably want your usual component action to complete the the wizard step. By default, actions are passed through along with the `Wiz.View`. All you have to do is set the `completed` prop to `true`, or use the `complete()` method in order to move on to the next step.
+You'll probably want your usual component action to mark the wizard action as completed. By default, actions are passed through along with the `Wiz.View`. This means all you have to do is change the `completed` prop to `true`, or use the `complete()` method.
 
 Props
 ---
@@ -76,7 +76,7 @@ export default function MyComponent() {
 
   const doSomething = () => {
     if (myWizView !== null) {
-      // Showing the Wiz component
+      // Marking this action as complete
       myWizView.complete()
     }
   }
@@ -98,4 +98,4 @@ export default function MyComponent() {
 Shows the `Wiz.View`.
 
 ### complete()
-Same funcionality as the `completed` prop. Running this method will mark the item as complete and show the first next item in queue. If there are no items left in the queue, the `onWizComplete` prop will run on each Item component.
+Same funcionality as the `completed` prop. Running this method will mark the action as complete and show the first next action in queue. If there are no actions left, the `onWizComplete` prop will run on each `Wiz.View` component.
