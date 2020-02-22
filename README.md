@@ -43,7 +43,7 @@ Start wrapping each of the elements you want to be part of the wizard inside a `
 ```
 
 ### 3. Handling completion
-You'll probably want your usual component action to mark the wizard action as completed. By default, actions are passed through along with the children of `Wiz.View`. This means all you have to do is change the `completed` prop to `true`, or use the `complete()` method.
+You'll probably want your usual component action to mark the wizard action as completed. By default, actions are passed through along with the children of `Wiz.View`. This means all you have to do is change the `completed` prop to `true`. Alternatively, you can use the `complete()` method.
 
 ```jsx
 export default function MyComponent() {
