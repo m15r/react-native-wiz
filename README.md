@@ -1,9 +1,7 @@
 # React Native Wiz
 A beautiful Wizard for React Native because every app needs a proper introduction.
 
-<p align="center">
-	<img width="260" height="450" src="example/wiz.gif">
-</p>
+![React Native Wiz Preview](example/wiz.gif)
 
 **React Native Wiz is in early development stage and has been tested exclusively on iOS. Use at your own risk.**
 
