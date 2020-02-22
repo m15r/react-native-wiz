@@ -1,5 +1,5 @@
 # React Native Wiz
-A beautiful Wizard for React Native, because every app needs a proper introduction.
+A beautiful Wizard for React Native because every app needs a proper introduction.
 
 ![React Native Wiz Preview](example/wiz.gif)
 
