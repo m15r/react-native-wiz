@@ -30,9 +30,9 @@ Wrap your wizard(s) or whole application inside the Wiz provider e.g. inside App
 ```
 
 #### 2. Adding your items
-Start wrapping each of the elements you want to be highlighted inside a `<Wiz.Item>`. Make sure to provide a unique ID for each component.
+Start wrapping each of the elements you want to be part of the wizard inside a `Wiz.View`. Make sure to provide a unique ID for each view.
 ```jsx
-<Wiz.Item
+<Wiz.View
   wiz="default"
   id="example"
   enabled={true}
@@ -41,11 +41,11 @@ Start wrapping each of the elements you want to be highlighted inside a `<Wiz.It
   <TouchableOpacity>
     <Text>My Button</Text>
   </TouchableOpacity>
-</Wiz.Item>
+</Wiz.View>
 ```
 
 #### 3. Handling completion
-You'll probably want your usual component action to complete the the wizard step. By default, actions are passed through along with the Wiz comonent. All you have to do is set the `completed` prop to true on `Wiz.Item` , or use the `complete()` method, in order to move on to the next step.
+You'll probably want your usual component action to complete the the wizard step. By default, actions are passed through along with the `Wiz.View`. All you have to do is set the `completed` prop to `true`, or use the `complete()` method, in order to move on to the next step.
 
 Props
 ---
@@ -62,6 +62,7 @@ Props
 | imageOffset   | Image offset from item pos (object) `{ x: int, y: int }` |
 | delay         | Time in ms after which in item should show. Defaults to `0` |
 | onActive      | Function. Runs when the item becomes active |
+| style         | Inherited (object) |
 
 Methods
 ---
@@ -81,20 +82,20 @@ export default function MyComponent() {
   }
 
   return (
-    <Wiz.Item  
+    <Wiz.View  
       id="example"
       ref={ref => myWizardComponent = ref}>
       <TouchableOpacity onPress={doSomething}>
         <Text>My Button</Text>
       </TouchableOpacity>
-    </Wiz.Item>
+    </Wiz.View>
   )
 
 }
 ```
 
 ### show()
-Shows the item.
+Shows the `Wiz.View`.
 
 ### complete()
 Same funcionality as the `completed` prop. Running this method will mark the item as complete and show the first next item in queue. If there are no items left in the queue, the `onWizComplete` prop will run on each Item component.
