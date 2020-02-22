@@ -90,7 +90,7 @@ customComponent | Custom component to render
 customComponentOffset | Offset from component position (object) `{ x: int, y: int }`
 delay         | Time in ms after which the action should appear. Defaults to `0`
 onActive      | Function. Runs when the action becomes active
-onComplete    | Function. Runs when the action is completed
+onComplete    | Function. Runs when the action has completed
 style         | Inherited from `View` (object)
 
 Methods
