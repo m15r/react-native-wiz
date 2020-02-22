@@ -69,7 +69,7 @@ Props
 | customComponentOffset | ... |
 | delay         | Time in ms after which in item should show. Defaults to `0` |
 | onActive      | Function. Runs when the item becomes active |
-| style         | Inherited (object) |
+| style         | Inherited from `View` (object) |
 
 Methods
 ---
