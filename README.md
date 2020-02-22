@@ -65,8 +65,8 @@ Props
 | imageHeight   | Height of the image. Defaults to `100` |
 | imageWidth    | Width of the image. Defaults to `100` |
 | imageOffset   | Offset from component position (object) `{ x: int, y: int }` |
-| customComponent | ... |
-| customComponentOffset | ... |
+| customComponent | Custom component to render |
+| customComponentOffset | Offset from component position (object) `{ x: int, y: int }` |
 | delay         | Time in ms after which in item should show. Defaults to `0` |
 | onActive      | Function. Runs when the item becomes active |
 | style         | Inherited from `View` (object) |
