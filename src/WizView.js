@@ -106,7 +106,7 @@ WizView.propTypes = {
   complete: PropTypes.bool,
   text: PropTypes.string,
   textStyle: PropTypes.object,
-  image: PropTypes.string,
+  image: PropTypes.oneOfType([ PropTypes.object, PropTypes.func, PropTypes.number ]),
   imageOffset: PropTypes.object,
   imageHeight: PropTypes.number,
   imageWidth: PropTypes.number,
