@@ -58,8 +58,13 @@ Props
 | autoPlay      | Boolean determining whether or not the wizards hould start by itself. Use with care and only on the first item in a wizard. Defaults to `false` | 
 | queue         | Position in queue. Use this to configure the playing order. Defaults to `0` |
 | completed     | After setting this prop to true the next item will appear |
+| text          | Text describing your action |
+| textOffset    | Offset from component position (object) `{ x: int, y: int }` |
+| textStyle     | Styling for `Text` component (object) |
 | image         | Description image source (optional) |
-| imageOffset   | Image offset from item pos (object) `{ x: int, y: int }` |
+| imageHeight   | Height of the image. Defaults to `100` |
+| imageWidth    | Width of the image. Defaults to `100` |
+| imageOffset   | Offset from component position (object) `{ x: int, y: int }` |
 | delay         | Time in ms after which in item should show. Defaults to `0` |
 | onActive      | Function. Runs when the item becomes active |
 | style         | Inherited (object) |
