@@ -95,33 +95,6 @@ style         | Inherited from `View` (object)
 Methods
 ---
 
-Methods can be accessed using a component ref.
-
-```jsx
-let myWizView = null
-
-export default function MyComponent() {
-
-  const doSomething = () => {
-    if (myWizView !== null) {
-      // Marking this action as complete
-      myWizView.complete()
-    }
-  }
-
-  return (
-    <Wiz.View  
-      id="example"
-      ref={ref => myWizView = ref}>
-      <TouchableOpacity onPress={doSomething}>
-        <Text>My Button</Text>
-      </TouchableOpacity>
-    </Wiz.View>
-  )
-
-}
-```
-
 ### show()
 Shows the `Wiz.View`.
 
