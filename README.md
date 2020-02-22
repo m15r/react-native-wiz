@@ -76,7 +76,7 @@ export default function MyComponent() {
 
   const doSomething = () => {
     if (myWizView !== null) {
-      // Showing the Item component
+      // Showing the Wiz component
       myWizView.complete()
     }
   }
