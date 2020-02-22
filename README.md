@@ -65,6 +65,8 @@ Props
 | imageHeight   | Height of the image. Defaults to `100` |
 | imageWidth    | Width of the image. Defaults to `100` |
 | imageOffset   | Offset from component position (object) `{ x: int, y: int }` |
+| customComponent | ... |
+| customComponentOffset | ... |
 | delay         | Time in ms after which in item should show. Defaults to `0` |
 | onActive      | Function. Runs when the item becomes active |
 | style         | Inherited (object) |
@@ -72,7 +74,7 @@ Props
 Methods
 ---
 
-Methods can be accesed through the component ref.
+Methods can be accessed using a component ref.
 
 ```jsx
 let myWizView = null
