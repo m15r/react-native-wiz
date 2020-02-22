@@ -77,6 +77,7 @@ class WizView extends Component {
   }
 
   complete = () => {
+    this.props.onComplete()
     this.context.next()
   }
 
@@ -113,7 +114,7 @@ WizView.propTypes = {
   customComponentOffset: PropTypes.object,
   delay: PropTypes.number,
   onActive: PropTypes.func,
-  onWizComplete: PropTypes.func,
+  onComplete: PropTypes.func,
   // Inherited props
   style: PropTypes.object
 }
@@ -136,7 +137,7 @@ WizView.defaultProps = {
   customComponentOffset: { x: 0, y: -60 },
   delay: 0,
   onActive: () => {},
-  onWizComplete: () => {}
+  onComplete: () => {}
 }
 
 export default WizView
