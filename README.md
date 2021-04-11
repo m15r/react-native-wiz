@@ -4,7 +4,7 @@ A beautiful Wizard for React Native because every app needs a proper introductio
 ![React Native Wiz Preview](example/wiz.gif)
 
 ```diff
-- This package is no longer maintained and tested only on iOS.
+- This package is no longer maintained and tested only on iOS. A better alternative will be published upon request.
 ```
 
 Installation
@@ -12,7 +12,7 @@ Installation
 * npm: `npm install react-native-wiz`
 * yarn: `yarn add react-native-wiz`
 
-Add to the top of each component accessing the Wiz library. A better alternative will be published upon request.
+Add to the top of each component accessing the Wiz library.
 
 ```jsx
 import Wiz from 'react-native-wiz'
